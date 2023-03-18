@@ -15,17 +15,21 @@ var specialCharacters = ["!","#","$","%","&","(",")","*","+",",","-",".","/",":"
 function writePassword() {
 
   var chooseLength = prompt("How many characters would you like? Choose between 8 and 128.");
-
   if (chooseLength<8 || chooseLength>128) window.alert("Password is either too short or too long.");
   if(isNaN(chooseLength))window.alert("Invalid Input");
   
+  var lowerCase = prompt('Click OK to to use lowercase letters.');
+  var upperCase = prompt('Click OK to use uppercase letters.');
+  var numericArray = prompt('Click OK to use numbers.');
+  var specialCharacters = prompt('Click OK to use special characters.');
+
 
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
-}
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
