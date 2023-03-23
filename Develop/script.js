@@ -10,6 +10,7 @@ var numericArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 var specialCharacters = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "}", "~"];
 
+// randomNumber function to pick characters for password
 function randomNumber(numberRandom) {
   var randomInput = Math.floor(Math.random() * numberRandom.length);
   var userInput = numberRandom[randomInput]
@@ -56,7 +57,7 @@ function writePassword() {
   // Array for user selected charcters
   var userSelcted = [];
 
-  //if statements to grab the selected array
+  //if statements to use characters from the selected array
 
   if (lowerCaseOK === true) {
     userSelcted = userSelcted.concat(lowerCase);
@@ -77,7 +78,7 @@ function writePassword() {
     userSelcted = userSelcted.concat(specialCharacters);
   }
 
-  // for loop to grab random characters from selected choices in selected length
+  // for loop to get random characters from selected choices in selected length
   for (let i = 0; i < chosenLength; i++) {
     randomCharacters = randomNumber(userSelcted);
     result.push(randomCharacters);
